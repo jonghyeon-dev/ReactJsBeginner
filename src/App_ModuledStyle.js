@@ -1,5 +1,5 @@
 import Button from "./Button";
-import styles from "./App.module.css";
+import styles from "../assets/css/App.module.css";
 function App() {
   return (
     <div >
