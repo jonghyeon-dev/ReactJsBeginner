@@ -1,25 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+// import { useState, useEffect } from "react";
+import Home from './routes/Home';
+import Detail from './routes/Detail';
+import React from "react";
+import {
+  
+  BrowserRouter as Router,
+  // HashRouter as Router,
+  // Switch, // 구버전
+  Routes,
+  Route,
+  Link
+} from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  <Router>
+    {/* React.js 5버전 이하
+    <Switch>
+      <Route path="/">
+        <Home />
+      </Route>
+    </Switch> */}
+    {/* React.js 6버전 이상 */}
+    <Routes>
+      <Route path="/hello" element={<h1>Hello</h1>}/>
+      <Route path="/movie/:id" element={<Detail />} />
+      <Route path="/" element={<Home />} />
+    </Routes>
+  </Router>);
 }
 
 export default App;
