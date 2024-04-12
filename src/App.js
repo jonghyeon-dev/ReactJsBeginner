@@ -9,7 +9,6 @@ import {
   // Switch, // 구버전
   Routes,
   Route,
-  Link
 } from "react-router-dom";
 
 function App() {
@@ -22,10 +21,10 @@ function App() {
       </Route>
     </Switch> */}
     {/* React.js 6버전 이상 */}
-    <Routes>
-      <Route path="/hello" element={<h1>Hello</h1>}/>
-      <Route path="/movie/:id" element={<Detail />} />
-      <Route path="/" element={<Home />} />
+    <Routes basename={process.env.PUBLIC_URL}>
+      <Route path={process.env.PUBLIC_URL+"/hello"} element={<h1>Hello</h1>}/>
+      <Route path={process.env.PUBLIC_URL+"/movie/:id"} element={<Detail />} />
+      <Route path={process.env.PUBLIC_URL+"/"} element={<Home />} />
     </Routes>
   </Router>);
 }
